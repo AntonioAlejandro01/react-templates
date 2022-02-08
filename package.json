@@ -1,0 +1,70 @@
+{
+	"name": "react-template-base",
+	"version": "1.0.0",
+	"description": "React Template <Base> ",
+	"main": "index.js",
+	"scripts": {
+		"build": "webpack --config webpack.config.production.js",
+		"start": "webpack serve --config webpack.config.development.js",
+		"format": "prettier --write '{*.js,src/**/*.{js,jsx}}'",
+		"lint": "eslint 'src/**/*.jsx' --fix",
+		"style": "npm run lint & npm run format"
+	},
+	"keywords": [
+		"react",
+		"webpack",
+		"jest",
+		"accesibility"
+	],
+	"author": {
+		"name": "AntonioAlejandro01",
+		"email": "antonioalejandroserranoramirez@gmail.com",
+		"url": "http://antonioalejandro.com"
+	},
+	"license": "MIT",
+	"dependencies": {
+		"@babel/core": "~7.17.0",
+		"@babel/preset-env": "~7.16.11",
+		"@babel/preset-react": "~7.16.7",
+		"babel-loader": "~8.2.3",
+		"css-loader": "~6.6.0",
+		"html-loader": "~3.1.0",
+		"html-webpack-plugin": "~5.5.0",
+		"react": "~17.0.2",
+		"react-dom": "~17.0.2",
+		"webpack": "~5.68.0",
+		"webpack-cli": "~4.9.2",
+		"webpack-dev-server": "~4.7.4"
+	},
+	"devDependencies": {
+		"@babel/eslint-parser": "^7.17.0",
+		"@babel/plugin-transform-runtime": "~7.17.0",
+		"css-minimizer-webpack-plugin": "~3.4.1",
+		"eslint": "^8.8.0",
+		"eslint-config-airbnb": "^19.0.4",
+		"eslint-config-prettier": "~8.3.0",
+		"eslint-plugin-import": "~2.25.4",
+		"eslint-plugin-jsx-a11y": "~6.5.1",
+		"eslint-plugin-prettier": "~4.0.0",
+		"eslint-plugin-react": "~7.28.0",
+		"eslint-plugin-react-hooks": "~4.3.0",
+		"html-minimizer-webpack-plugin": "~3.5.0",
+		"husky": "~7.0.4",
+		"lint-staged": "~12.3.3",
+		"mini-css-extract-plugin": "~2.5.3",
+		"prettier": "~2.5.1",
+		"terser-webpack-plugin": "~5.3.1"
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "lint-staged"
+		}
+	},
+	"lint-staged": {
+		"*.{js,jsx}": [
+			"npm run format",
+			"npm run lint",
+			"git add"
+		]
+	}
+}
